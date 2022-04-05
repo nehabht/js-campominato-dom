@@ -39,6 +39,7 @@ formElement.addEventListener("submit", function (event) {
             generateNumbers(limit)
             
             
+            
         }else if (levelElement === "2"){
             limit = 81
             cols = 9
@@ -47,12 +48,14 @@ formElement.addEventListener("submit", function (event) {
             generateNumbers(limit)
             
             
+            
         }else if (levelElement === "3"){
             limit = 49
             cols = 7
             console.log('d')
             generateGrid('.cells', 'div', 'cell', limit, cols)
             generateNumbers(limit)
+            
  
 
         }
@@ -124,7 +127,10 @@ function selectElements(selector){
 
          // cambia colore della cella al click
         cell.addEventListener('click', function () {
+
+        
             this.classList.add('active_blu');
+
         
         })
     }
@@ -150,8 +156,7 @@ function randomNumbersF (valore_massimo){
 
     while (randomNumbers.length !== 16){
         const randomNumber = getRandomInteger(1,valore_massimo)
-        randomNumbers.push(randomNumber)
-        console.log(randomNumber)
+        // randomNumbers.push(randomNumber)
         // pusha il numero nell'array se i numeri non sono uguali (non funziona)
         if (!randomNumbers.includes(randomNumber)) {
             randomNumbers.push(randomNumber)
@@ -161,11 +166,14 @@ function randomNumbersF (valore_massimo){
     return randomNumbers;
 }
 
-console.log(randomNumbersF(49))
+
 
 
 // al click se un numero random coincide con il numero della cella, questa si colora di rosso
 // altrimenti il codice continua
+
+
+
 
 
 
