@@ -134,6 +134,40 @@ function selectElements(selector){
 
 // selectElements('.cell')
 
+// generatore di numeri causali (al posto di max metto limit)
+
+function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+// creo l'array dei numeri casuali e la funzione che pusha il numero nell'array
+// valore massimo da sostituire al limite 
+
+function randomNumbersF (valore_massimo){
+    const randomNumbers = [];
+    
+
+    while (randomNumbers.length !== 16){
+        const randomNumber = getRandomInteger(1,valore_massimo)
+        randomNumbers.push(randomNumber)
+        console.log(randomNumber)
+        // pusha il numero nell'array se i numeri non sono uguali (non funziona)
+        if (!randomNumbers.includes(randomNumber)) {
+            randomNumbers.push(randomNumber)
+        } 
+    }
+
+    return randomNumbers;
+}
+
+console.log(randomNumbersF(49))
+
+
+// al click se un numero random coincide con il numero della cella, questa si colora di rosso
+// altrimenti il codice continua
+
+
 
 
 
