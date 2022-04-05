@@ -133,16 +133,20 @@ function selectElements(selector){
 
             console.log(this.innerText)
             console.log(bombNumber)
+
             
+
             // al click se un numero random coincide con il numero della cella, questa si colora di rosso
             // altrimenti il codice continua
-
             if (bombNumber.includes(parseInt(this.innerText))){
                 this.classList.add('active_red');
+                alert("you lose!")
+
             } else{
                 this.classList.add('active_blu');
             }
-        
+            
+            
         })
     }
 
