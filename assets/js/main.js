@@ -131,11 +131,13 @@ function selectElements(selector){
          // cambia colore della cella al click
         cell.addEventListener('click', function () {
 
-            console.log(this)
-            this.classList.add('active_blu');
+            console.log(this.innerText)
+            console.log(bombNumber)
+            
+            // al click se un numero random coincide con il numero della cella, questa si colora di rosso
+            // altrimenti il codice continua
 
-            if (numbers.includes.bombNumber ){
-
+            if (bombNumber.includes(parseInt(this.innerText))){
                 this.classList.add('active_red');
             } else{
                 this.classList.add('active_blu');
@@ -174,15 +176,6 @@ function randomNumbersF (valore_massimo){
 
     return randomNumbers;
 }
-
-
-
-
-// al click se un numero random coincide con il numero della cella, questa si colora di rosso
-// altrimenti il codice continua
-
-
-
 
 
 
