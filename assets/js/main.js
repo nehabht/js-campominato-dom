@@ -114,6 +114,9 @@ function generateNumbers(limit){
 function selectElements(selector){
     const cells = document.querySelectorAll(selector);
     const numbers = generateNumbers(limit)
+    const bombNumber = randomNumbersF(limit)
+    console.log(bombNumber)
+    console.log(numbers)
     let cell;
 
     for (let i = 0; i < cells.length; i++) {
@@ -128,9 +131,15 @@ function selectElements(selector){
          // cambia colore della cella al click
         cell.addEventListener('click', function () {
 
-        
+            console.log(this)
             this.classList.add('active_blu');
 
+            if (numbers.includes.bombNumber ){
+
+                this.classList.add('active_red');
+            } else{
+                this.classList.add('active_blu');
+            }
         
         })
     }
